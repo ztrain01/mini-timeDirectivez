@@ -3,9 +3,8 @@ var app = angular.module('leApp');
 app.directive('theTime', function() {
   return {
     restrict: 'E',
-    template: '<div> The current time is {{time | date: }} </div>',
+    template: 'The current time is {{time | date: "MM/dd?yyy \'at\' h:mma}}',
     link: function(scope, element, attrs){
-      var currentTime = Date.now();
       scope.time = currentTime.toString();
     }
   }
